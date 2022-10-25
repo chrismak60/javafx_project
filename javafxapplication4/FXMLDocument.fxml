@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafxapplication4.custom.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="1255.0" style="-fx-background-color: #7777;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication4.FXMLDocumentController">
+   <children>
+      <AnchorPane prefHeight="554.0" prefWidth="235.0" style="-fx-background-color: #77;">
+         <children>
+            <Button fx:id="addBtn" layoutX="37.0" layoutY="390.0" mnemonicParsing="false" onAction="#Add_emergency" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: green;" text="Add New Emergency">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateBtn" layoutX="37.0" layoutY="446.0" mnemonicParsing="false" onAction="#Edit" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: orange;" text="Update">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteBtn" layoutX="37.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteRow" prefHeight="40.0" prefWidth="179.0" style="-fx-background-color: #E74C3C;" text="Delete">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="33.0" layoutY="46.0" text="Name :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="78.0" text="Surname :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="108.0" text="Address :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="139.0" text="Telephone:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="166.0" text="Emergency type :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="247.0" text="Description :">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txt_description" layoutX="34.0" layoutY="277.0" prefHeight="100.0" prefWidth="179.0" />
+            <TextField fx:id="txt_name" layoutX="81.0" layoutY="44.0" prefHeight="25.0" prefWidth="140.0" promptText="name" />
+            <TextField fx:id="txt_surname" layoutX="99.0" layoutY="76.0" prefHeight="25.0" prefWidth="122.0" promptText="surname" />
+            <TextField fx:id="txt_address" layoutX="99.0" layoutY="106.0" prefHeight="25.0" prefWidth="122.0" promptText="address" />
+            <NumberTextField fx:id="txt_telephone" layoutX="106.0" layoutY="137.0" prefHeight="25.0" prefWidth="114.0" promptText="telephone" />
+            <CheckBox fx:id="check_firearms" layoutX="51.0" layoutY="187.0" mnemonicParsing="false" text="Fire Department">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="check_police" layoutX="51.0" layoutY="207.0" mnemonicParsing="false" text="Police">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="check_ambulance" layoutX="51.0" layoutY="227.0" mnemonicParsing="false" text="Ambulance">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table_users" layoutX="239.0" layoutY="50.0" onMouseClicked="#getSelected" prefHeight="490.0" prefWidth="1001.0">
+        <columns>
+          <TableColumn fx:id="col_date" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="col_name" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="col_surname" prefWidth="75.0" text="Surname" />
+            <TableColumn fx:id="col_address" prefWidth="116.0" text="Address" />
+            <TableColumn fx:id="col_telephone" prefWidth="144.0" text="Telephone" />
+            <TableColumn fx:id="col_description" prefWidth="273.0" text="Description" />
+            <TableColumn fx:id="col_firearms" prefWidth="90.0" text="Fire Department" />
+            <TableColumn fx:id="col_police" prefWidth="70.0" text="Police" />
+            <TableColumn fx:id="col_ambulance" prefWidth="82.0" text="Ambulance" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comb" layoutX="665.0" layoutY="14.0" onAction="#listAfterCombobox" prefWidth="150.0" promptText="Emergency Type" />
+   </children>
+</AnchorPane>
